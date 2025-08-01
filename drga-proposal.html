@@ -243,39 +243,38 @@
         </section>
         
         <section id="smart-contract">
-            <h2>Acceptance & Smart Contract</h2>
-            <p>By filling out the form below, you are formally accepting the terms of this proposal and booking your project with DigiSoal. A copy of this signed agreement will be emailed to you for your records.</p>
-            <form id="proposal-form" action="send_proposal.php" method="POST">
-                <label for="client-name">Your Full Name:</label>
-                <input type="text" id="client-name" name="Client_Name" required>
-                
-                <label for="client-email">Your Email Address:</label>
-                <input type="email" id="client-email" name="Client_Email" required>
-                
-                <label for="start-date">Preferred Project Start Date:</label>
-                <input type="date" id="start-date" name="Start_Date" required>
-                
-                <label for="comments">Comments / Feedback:</label>
-                <textarea id="comments" name="Comments" rows="4"></textarea>
-                
-                <label for="signature">Digital Signature:</label>
-                <input type="text" id="signature" name="Signature" placeholder="Type your name to sign" required>
-                
-                <label for="contact-method">How should we contact you?</label>
-                <select id="contact-method" name="Contact_Method" required>
-                    <option value="email">Email</option>
-                    <option value="whatsapp">WhatsApp (+27 66 160 7344)</option>
-                </select>
-                
-                <label for="accept">
-                    <input type="checkbox" id="accept" name="Agreement" value="Accepted" required>
-                    I have read and agree to the terms and conditions outlined in this proposal.
-                </label>
-                
-                <button type="submit" class="submit-button">Accept & Sign Proposal</button>
-            </form>
-        </section>
-    </div>
+    <h2>Acceptance & Smart Contract</h2>
+    <p>By filling out the form below, you are formally accepting the terms of this proposal and booking your project with DigiSoal. A copy of this signed agreement will be emailed to you for your records.</p>
+    <form id="proposal-form" action="send_proposal.php" method="POST">
+        <label for="client-name">Your Full Name:</label>
+        <input type="text" id="client-name" name="Client_Name" required>
+        
+        <label for="client-email">Your Email Address:</label>
+        <input type="email" id="client-email" name="Client_Email" required>
+        
+        <label for="start-date">Preferred Project Start Date:</label>
+        <input type="date" id="start-date" name="Start_Date" required>
+        
+        <label for="comments">Comments / Feedback:</label>
+        <textarea id="comments" name="Comments" rows="4"></textarea>
+        
+        <label for="signature">Digital Signature:</label>
+        <input type="text" id="signature" name="Signature" placeholder="Type your name to sign" required>
+        
+        <label for="contact-method">I'd like a copy of my submitted form to be sent to...</label>
+        <select id="contact-method" name="Contact_Method" required>
+            <option value="email">My Email Address</option>
+            <option value="whatsapp">My WhatsApp</option>
+        </select>
+        
+        <label for="accept">
+            <input type="checkbox" id="accept" name="Agreement" value="Accepted" required>
+            I have read and agree to the terms and conditions outlined in this proposal.
+        </label>
+        
+        <button type="submit" class="submit-button">Accept & Sign Proposal</button>
+    </form>
+</section>
 
     <footer>
         &copy; 2025 DigiSoal. All rights reserved.

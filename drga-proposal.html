@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dr Gwen Ramokgopa | DigiSoal Proposal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Open Sans', sans-serif;
@@ -117,27 +117,6 @@
             font-family: 'Open Sans', sans-serif;
             color: #1B365D;
         }
-        .signature-pad {
-            border: 2px solid #2E8B57;
-            background-color: #ffffff;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-        .button {
-            display: inline-block;
-            background-color: #2E8B57;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 6px;
-            margin: 10px 5px;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .button:hover {
-            background-color: #257049;
-            transform: translateY(-2px);
-        }
         .submit-button {
             background-color: #C5B358;
             color: white;
@@ -157,6 +136,65 @@
             font-size: 0.9em;
             color: #555;
             margin-top: 30px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .modal-actions a {
+            display: block;
+            margin: 15px 0;
+            padding: 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            font-size: 1rem;
+            transition: opacity 0.3s;
+        }
+        .modal-actions a:hover {
+            opacity: 0.8;
+        }
+        .modal-actions .email-button {
+            background-color: #003366;
+        }
+        .modal-actions .whatsapp-button {
+            background-color: #2E8B57;
+        }
+        .modal-actions .icon {
+            margin-right: 10px;
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -243,44 +281,107 @@
         </section>
         
         <section id="smart-contract">
-    <h2>Acceptance & Smart Contract</h2>
-    <p>By filling out the form below, you are formally accepting the terms of this proposal and booking your project with DigiSoal. A copy of this signed agreement will be emailed to you for your records.</p>
-    <form id="proposal-form" action="send_proposal.php" method="POST">
-        <label for="client-name">Your Full Name:</label>
-        <input type="text" id="client-name" name="Client_Name" required>
-        
-        <label for="client-email">Your Email Address:</label>
-        <input type="email" id="client-email" name="Client_Email" required>
-        
-        <label for="start-date">Preferred Project Start Date:</label>
-        <input type="date" id="start-date" name="Start_Date" required>
-        
-        <label for="comments">Comments / Feedback:</label>
-        <textarea id="comments" name="Comments" rows="4"></textarea>
-        
-        <label for="signature">Digital Signature:</label>
-        <input type="text" id="signature" name="Signature" placeholder="Type your name to sign" required>
-        
-        <label for="contact-method">I'd like a copy of my submitted form to be sent to...</label>
-        <select id="contact-method" name="Contact_Method" required>
-            <option value="email">My Email Address</option>
-            <option value="whatsapp">My WhatsApp</option>
-        </select>
-        
-        <label for="accept">
-            <input type="checkbox" id="accept" name="Agreement" value="Accepted" required>
-            I have read and agree to the terms and conditions outlined in this proposal.
-        </label>
-        
-        <button type="submit" class="submit-button">Accept & Sign Proposal</button>
-    </form>
-</section>
+            <h2>Acceptance & Smart Contract</h2>
+            <p>By filling out the form below, you are formally accepting the terms of this proposal.</p>
+            <form id="proposal-form" onsubmit="handleFormSubmission(event)">
+                <label for="client-name">Your Full Name:</label>
+                <input type="text" id="client-name" name="Client_Name" required>
+                
+                <label for="client-email">Your Email Address:</label>
+                <input type="email" id="client-email" name="Client_Email" required>
+                
+                <label for="start-date">Preferred Project Start Date:</label>
+                <input type="date" id="start-date" name="Start_Date" required>
+                
+                <label for="comments">Comments / Feedback:</label>
+                <textarea id="comments" name="Comments" rows="4"></textarea>
+                
+                <label for="signature">Digital Signature:</label>
+                <input type="text" id="signature" name="Signature" placeholder="Type your name to sign" required>
+                
+                <label for="accept">
+                    <input type="checkbox" id="accept" name="Agreement" value="Accepted" required>
+                    I have read and agree to the terms and conditions outlined in this proposal.
+                </label>
+                
+                <button type="submit" class="submit-button">Accept & Sign Proposal</button>
+            </form>
+        </section>
+    </div>
 
     <footer>
         &copy; 2025 DigiSoal. All rights reserved.
     </footer>
 
+    <div id="actionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle">Send Form to DigiSoal</h3>
+            <p id="modalMessage">Choose how you'd like to send this completed form to DigiSoal.</p>
+            <div id="modalActions" class="modal-actions">
+                </div>
+        </div>
+    </div>
+
     <script>
+        const myEmail = 'mkhulosoal@gmail.com';
+        const myWhatsapp = '27661607344';
+
+        function handleFormSubmission(e) {
+            e.preventDefault();
+
+            const clientName = document.getElementById('client-name').value;
+            const clientEmail = document.getElementById('client-email').value;
+            const startDate = document.getElementById('start-date').value;
+            const comments = document.getElementById('comments').value;
+            const signature = document.getElementById('signature').value;
+            const agreement = document.getElementById('accept').checked ? 'Agreed' : 'Not Agreed';
+
+            const emailSubject = encodeURIComponent('Proposal Accepted & Feedback');
+            const emailBody = `Proposal Acceptance from ${clientName}\n\n` +
+                                `Client Name: ${clientName}\n` +
+                                `Client Email: ${clientEmail}\n` +
+                                `Preferred Start Date: ${startDate}\n` +
+                                `Comments: ${comments || 'No comments provided.'}\n` +
+                                `\n---\n` +
+                                `Digital Signature: ${signature}\n` +
+                                `Agreement to Terms: ${agreement}`;
+            const mailtoLink = `mailto:${myEmail}?subject=${emailSubject}&body=${encodeURIComponent(emailBody)}`;
+
+            const whatsappMessage = `Hello DigiSoal, I have just accepted the proposal.\n\n` +
+                                    `Name: ${clientName}\n` +
+                                    `Email: ${clientEmail}\n` +
+                                    `Preferred Start Date: ${startDate}\n` +
+                                    `Comments: ${comments || 'No comments provided.'}\n` +
+                                    `\n---\n` +
+                                    `Digital Signature: ${signature}\n` +
+                                    `Agreement to Terms: ${agreement}`;
+            const whatsappLink = `https://wa.me/${myWhatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
+            
+            showActionModal(mailtoLink, whatsappLink);
+        }
+
+        function showActionModal(mailtoLink, whatsappLink) {
+            const modal = document.getElementById('actionModal');
+            const modalActions = document.getElementById('modalActions');
+            
+            modalActions.innerHTML = `
+                <a href="${mailtoLink}" class="email-button">
+                    Send via Email
+                </a>
+                <a href="${whatsappLink}" target="_blank" rel="noopener noreferrer" class="whatsapp-button">
+                    Send via WhatsApp
+                </a>
+            `;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('actionModal');
+            modal.style.display = 'none';
+        }
+
+        // Accordion functionality
         document.addEventListener('DOMContentLoaded', function() {
             const accordionItems = document.querySelectorAll('.accordion-item');
             accordionItems.forEach(item => {

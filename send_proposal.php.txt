@@ -11,27 +11,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Your email address
     $yourEmail = "mkhulosoal@gmail.com";
-    $subject = "New Proposal Acceptance from " . $clientName;
+    $subjectToYou = "New Proposal Acceptance from " . $clientName;
     
     // Email content for you
     $to = $yourEmail;
-    $headers = "From: " . $clientEmail . "\r\n";
-    $headers .= "Reply-To: " . $clientEmail . "\r\n";
-    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+    $headersToYou = "From: " . $clientEmail . "\r\n";
+    $headersToYou .= "Reply-To: " . $clientEmail . "\r\n";
+    $headersToYou .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-    $message = "<html><body>";
-    $message .= "<h2>New Proposal Acceptance Received!</h2>";
-    $message .= "<p><strong>Client Name:</strong> " . $clientName . "</p>";
-    $message .= "<p><strong>Client Email:</strong> " . $clientEmail . "</p>";
-    $message .= "<p><strong>Preferred Start Date:</strong> " . $startDate . "</p>";
-    $message .= "<p><strong>Comments:</strong><br>" . nl2br($comments) . "</p>";
-    $message .= "<p><strong>Digital Signature:</strong> " . $signature . "</p>";
-    $message .= "<p><strong>Agreement:</strong> " . $agreement . "</p>";
-    $message .= "<p><strong>Preferred Contact Method:</strong> " . $contactMethod . "</p>";
-    $message .= "</body></html>";
+    $messageToYou = "<html><body>";
+    $messageToYou .= "<h2>New Proposal Acceptance Received!</h2>";
+    $messageToYou .= "<p><strong>Client Name:</strong> " . $clientName . "</p>";
+    $messageToYou .= "<p><strong>Client Email:</strong> " . $clientEmail . "</p>";
+    $messageToYou .= "<p><strong>Preferred Start Date:</strong> " . $startDate . "</p>";
+    $messageToYou .= "<p><strong>Comments:</strong><br>" . nl2br($comments) . "</p>";
+    $messageToYou .= "<p><strong>Digital Signature:</strong> " . $signature . "</p>";
+    $messageToYou .= "<p><strong>Agreement:</strong> " . $agreement . "</p>";
+    $messageToYou .= "<p><strong>Client's Requested Delivery Method:</strong> " . $contactMethod . "</p>";
+    $messageToYou .= "</body></html>";
     
     // Send the email to you
-    mail($to, $subject, $message, $headers);
+    mail($to, $subjectToYou, $messageToYou, $headersToYou);
 
     // Send a confirmation email to the client
     $clientSubject = "DigiSoal Proposal Acceptance Confirmation";

@@ -1,174 +1,192 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website Design Proposal | DigiSoal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #FFFFFF;
-      color: #1B365D;
-    }
-    header {
-      background-color: #2E8B57;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-    }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.2em;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-      border-bottom: 1px solid #e0e0e0;
-    }
-    h2 {
-      color: #2E8B57;
-      font-family: 'Playfair Display', serif;
-      margin-top: 0;
-    }
-    .cta {
-      background-color: #C5B358;
-      padding: 20px;
-      color: white;
-      text-align: center;
-      font-weight: bold;
-      border-radius: 8px;
-      margin: 30px 0;
-      font-size: 1.2em;
-    }
-    .contact-box {
-      background-color: #1B365D;
-      color: white;
-      padding: 30px;
-      border-radius: 8px;
-      margin-top: 30px;
-    }
-    .contact-box h2 {
-      color: white;
-      border-bottom: 2px solid #2E8B57;
-      padding-bottom: 10px;
-    }
-    a.button {
-      display: inline-block;
-      background-color: #2E8B57;
-      color: white;
-      padding: 12px 25px;
-      text-decoration: none;
-      border-radius: 6px;
-      margin: 10px 5px;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-    a.button:hover {
-      background-color: #257049;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f4f4f4;
-      font-size: 0.9em;
-      color: #555;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    ul li:before {
-      content: '✓';
-      margin-right: 10px;
-      color: #2E8B57;
-    }
-    .price-list {
-      border-left: 3px solid #C5B358;
-      padding-left: 20px;
-    }
-    .price-list p {
-      margin: 5px 0;
-      display: flex;
-      justify-content: space-between;
-    }
-    .price-list p strong {
-      flex-grow: 1;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr Gwen Ramokgopa | Proposal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #F8F9FA;
+            color: #1B365D;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #2E8B57;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.2em;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #2E8B57;
+            font-family: 'Playfair Display', serif;
+            margin-top: 0;
+            border-bottom: 2px solid #C5B358;
+            padding-bottom: 10px;
+        }
+        .cta {
+            background-color: #C5B358;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 8px;
+            margin: 30px 0;
+            font-size: 1.2em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .contact-box {
+            background-color: #1B365D;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .contact-box h2 {
+            color: white;
+            border-bottom: 2px solid #2E8B57;
+        }
+        a.button {
+            display: inline-block;
+            background-color: #2E8B57;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        a.button:hover {
+            background-color: #257049;
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f4f4f4;
+            font-size: 0.9em;
+            color: #555;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li:before {
+            content: '✓';
+            margin-right: 10px;
+            color: #2E8B57;
+        }
+        .timeline-item {
+            padding: 15px 20px;
+            border-left: 3px solid #C5B358;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .timeline-item h3 {
+            margin: 0;
+            color: #1B365D;
+            font-size: 1.1em;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>DigiSoal Proposal</h1>
-    <p>Website Design & Digital Ecosystem for Dr Gwen Ramokgopa</p>
-  </header>
+    <header>
+        <h1>DigiSoal Proposal</h1>
+        <p>Website Design & Digital Ecosystem for Dr Gwen Ramokgopa</p>
+    </header>
 
-  <section>
-    <h2>Project Overview</h2>
-    <p>This proposal outlines the design and deployment of a new, secure digital ecosystem for Dr Gwen Ramokgopa. The project will establish a professional online presence with two scalable WordPress websites and a cohesive visual identity.</p>
-    <ul>
-      <li>Dr Gwen & Associates: A corporate site at www.drga.co.za to showcase professional services and expertise.</li>
-      <li>Dr Gwen Ramokgopa Foundation: A non-profit site at www.drgwenramokgopafoundation.org to highlight community initiatives and impact.</li>
-    </ul>
-    <div class="cta">
-      Estimated Total: R 20,940 (incl. design, hosting, CID, and integrations)
-    </div>
-  </section>
+    <div class="container">
+        <section id="project-overview">
+            <h2>Project Overview</h2>
+            <p>This proposal outlines the design and deployment of a new, secure digital ecosystem for Dr Gwen Ramokgopa. The project will establish a professional online presence with two scalable **WordPress websites** and a cohesive **visual identity**.</p>
+            <ul>
+                <li>**Dr Gwen & Associates:** A corporate site at **www.drga.co.za** to showcase professional services and expertise.</li>
+                <li>**Dr Gwen Ramokgopa Foundation:** A non-profit site at **www.drgwenramokgopafoundation.org** to highlight community initiatives and impact.</li>
+            </ul>
+            <div class="cta">
+                **Estimated Total: R 20,940** (incl. design, hosting, CID, and integrations)
+            </div>
+        </section>
 
-  <section>
-    <h2>Visual & Brand Identity</h2>
-    <p>We will create a consistent and professional look across all platforms to build a strong brand presence. This includes:</p>
-    <p><strong>Colour Palette:</strong> Royal Blue, Emerald Green, Soft Gold, Clean White</p>
-    <p><strong>Typography:</strong> 'Playfair Display' for bold headings, 'Open Sans' for clean, readable body text</p>
-  </section>
+        <section id="visual-identity">
+            <h2>Visual & Brand Identity</h2>
+            <p>We will create a consistent and professional look across all platforms to build a strong brand presence. This includes:</p>
+            <p><strong>Colour Palette:</strong> Royal Blue, Emerald Green, Soft Gold, Clean White</p>
+            <p><strong>Typography:</strong> 'Playfair Display' for bold headings, 'Open Sans' for clean, readable body text</p>
+        </section>
 
-  <section>
-    <h2>Detailed Scope of Work</h2>
-    <p>Our comprehensive package includes the following deliverables for both websites:</p>
-    <ul>
-      <li>Custom WordPress Theme: A modern, mobile-responsive design built for speed and security.</li>
-      <li>Essential Pages: Up to 5 key pages per site (e.g., Home, About, Services/Projects, Blog, Contact).</li>
-      <li>Professional Hosting: One year of secure, managed WordPress hosting to ensure reliability.</li>
-      <li>Analytics Integration: Setup of Google Analytics to track site performance and visitor behaviour.</li>
-      <li>Contact & Forms: Implementation of a secure contact form to capture leads and inquiries.</li>
-      <li>Basic Search Engine Optimization (SEO): On-page optimization for key pages to improve visibility.</li>
-    </ul>
-  </section>
- 
-  <section>
-    <h2>Project Timeline & Process</h2>
-    <p>We'll follow a clear, three-phase process to ensure a rapid and timely launch. The total project duration is approximately 3-4 weeks.</p>
-    <div class="price-list">
-      <p><strong>Phase 1: Planning & Design</strong> (1 week)</p>
-      <p><strong>Phase 2: Development & Integration</strong> (2-3 weeks)</p>
-      <p><strong>Phase 3: Final Review & Launch</strong> (2-3 days)</p>
-    </div>
-    <p><em>*This accelerated timeline requires timely feedback and delivery of content from the client to meet the launch date.</em></p>
-  </section>
+        <section id="scope-of-work">
+            <h2>Detailed Scope of Work</h2>
+            <p>Our comprehensive package includes the following deliverables for both websites:</p>
+            <ul>
+                <li>**Custom WordPress Theme:** A modern, mobile-responsive design built for speed and security.</li>
+                <li>**Essential Pages:** Up to 5 key pages per site (e.g., Home, About, Services/Projects, Blog, Contact).</li>
+                <li>**Professional Hosting:** One year of secure, managed WordPress hosting to ensure reliability.</li>
+                <li>**Analytics Integration:** Setup of Google Analytics to track site performance and visitor behaviour.</li>
+                <li>**Contact & Forms:** Implementation of a secure contact form to capture leads and inquiries.</li>
+                <li>**Basic Search Engine Optimization (SEO):** On-page optimization for key pages to improve visibility.</li>
+            </ul>
+        </section>
 
-  <section>
-    <h2>Client Sign-off & Next Steps</h2>
-    <p>To proceed with this project, please approve the proposal. We can begin as soon as we receive your sign-off and discuss your preferred start date.</p>
-    <a class="button" href="mailto:mkhulosoal@gmail.com?subject=Proposal Approval for Dr Gwen Ramokgopa&body=I approve the DigiSoal proposal for the website project. My preferred start date is [Enter Date].">Approve & Start Project</a>
-    <a class="button" href="https://wa.me/27661607344?text=Hi%20Mbuso,%20I%20have%20reviewed%20the%20proposal%20and%20would%20like%20to%20discuss%20it%20further.">Discuss on WhatsApp</a>
-  </section>
+        <section id="project-timeline">
+            <h2>Project Timeline & Process</h2>
+            <p>We'll follow a clear, three-phase process to ensure a rapid and timely launch. The total project duration is approximately **3-4 weeks**.</p>
+            <div class="timeline-item">
+                <h3>Phase 1: Planning & Design (1 week)</h3>
+                <p>Initial consultation, content planning, and visual design mockups.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Phase 2: Development & Integration (2-3 weeks)</h3>
+                <p>Website build, content population, and feature integration.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Phase 3: Final Review & Launch (2-3 days)</h3>
+                <p>Client feedback, final tweaks, and public launch.</p>
+            </div>
+            <p><em>*This accelerated timeline requires timely feedback and delivery of content from the client to meet the launch date.</em></p>
+        </section>
 
-  <section class="contact-box">
-    <h2>Contact DigiSoal</h2>
-    <p>Have questions? Let's connect.</p>
-    <p><strong>Mbuso Kumalo</strong></p>
-    <p>Email: <a href="mailto:mkhulosoal@gmail.com" style="color:white; text-decoration: underline;">mkhulosoal@gmail.com</a></p>
-    <p>Phone: <a href="tel:+27661607344" style="color:white; text-decoration: underline;">+27 66 160 7344</a></p>
-  </section>
+        <section id="sign-off">
+            <h2>Client Sign-off & Next Steps</h2>
+            <p>To proceed with this project, please approve the proposal. We can begin as soon as we receive your sign-off and discuss your preferred start date.</p>
+            <a class="button" href="mailto:mkhulosoal@gmail.com?subject=Proposal Approval for Dr Gwen Ramokgopa&body=I approve the DigiSoal proposal for the website project. My preferred start date is [Enter Date].">Approve & Start Project</a>
+            <a class="button" href="https://wa.me/27661607344?text=Hi%20Mbuso,%20I%20have%20reviewed%20the%20proposal%20and%20would%20like%20to%20discuss%20it%20further.">Discuss on WhatsApp</a>
+        </section>
 
-  <footer>
-    © 2025 DigiSoal. All rights reserved.
-  </footer>
+        <section class="contact-box">
+            <h2>Contact DigiSoal</h2>
+            <p>Have questions? Let's connect.</p>
+            <p><strong>Mbuso Kumalo</strong></p>
+            <p>Email: <a href="mailto:mkhulosoal@gmail.com" style="color:white; text-decoration: underline;">mkhulosoal@gmail.com</a></p>
+            <p>Phone: <a href="tel:+27661607344" style="color:white; text-decoration: underline;">+27 66 160 7344</a></p>
+        </section>
+    </div>
 
+    <footer>
+        &copy; 2025 DigiSoal. All rights reserved.
+    </footer>
 </body>
 </html>

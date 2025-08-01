@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dr Gwen Ramokgopa | Proposal</title>
+    <title>Dr Gwen Ramokgopa | DigiSoal Proposal</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
     <style>
         body {
@@ -17,77 +17,59 @@
         header {
             background-color: #2E8B57;
             color: white;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
             font-family: 'Playfair Display', serif;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin-bottom: 0.2em;
         }
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: auto;
             padding: 20px;
         }
-        section {
+        .accordion-item {
             background-color: white;
-            padding: 30px;
-            margin-bottom: 20px;
+            padding: 20px;
+            margin-bottom: 15px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        h2 {
-            color: #2E8B57;
+        .accordion-item:hover {
+            background-color: #f1f1f1;
+        }
+        .accordion-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-family: 'Playfair Display', serif;
-            margin-top: 0;
-            border-bottom: 2px solid #C5B358;
-            padding-bottom: 10px;
+            font-size: 1.5em;
+            color: #2E8B57;
+            padding: 10px 0;
         }
-        .cta {
-            background-color: #C5B358;
-            padding: 20px;
-            color: white;
-            text-align: center;
-            font-weight: bold;
-            border-radius: 8px;
-            margin: 30px 0;
-            font-size: 1.2em;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .accordion-title::after {
+            content: '+';
+            font-size: 2em;
+            color: #C5B358;
+            transition: transform 0.3s;
         }
-        .contact-box {
-            background-color: #1B365D;
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 30px;
+        .accordion-item.active .accordion-title::after {
+            content: '-';
+            transform: rotate(180deg);
         }
-        .contact-box h2 {
-            color: white;
-            border-bottom: 2px solid #2E8B57;
+        .accordion-content {
+            display: none;
+            padding: 15px 0;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 15px;
         }
-        a.button {
-            display: inline-block;
-            background-color: #2E8B57;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 6px;
-            margin: 10px 5px;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        a.button:hover {
-            background-color: #257049;
-            transform: translateY(-2px);
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #f4f4f4;
-            font-size: 0.9em;
-            color: #555;
+        .accordion-item.active .accordion-content {
+            display: block;
         }
         ul {
             list-style: none;
@@ -98,95 +80,183 @@
             margin-right: 10px;
             color: #2E8B57;
         }
-        .timeline-item {
-            padding: 15px 20px;
-            border-left: 3px solid #C5B358;
-            margin-bottom: 15px;
-            background-color: #f9f9f9;
+        .price-list p {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+        .total-price {
+            font-weight: bold;
+            font-size: 1.2em;
+            border-top: 2px solid #C5B358;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        #smart-contract {
+            background-color: #1B365D;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        #smart-contract h2 {
+            color: white;
+            border-bottom: 2px solid #2E8B57;
+            padding-bottom: 10px;
+        }
+        form label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .signature-pad {
+            border: 2px solid #2E8B57;
+            background-color: #ffffff;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #2E8B57;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #257049;
+        }
+        .submit-button {
+            background-color: #C5B358;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 20px;
             border-radius: 5px;
         }
-        .timeline-item h3 {
-            margin: 0;
-            color: #1B365D;
-            font-size: 1.1em;
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f4f4f4;
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>DigiSoal Proposal</h1>
-        <p>Website Design & Digital Ecosystem for Dr Gwen Ramokgopa</p>
+        <h1>Your Digital Future Starts Here</h1>
+        <p>A Proposal from DigiSoal to Dr Gwen Ramokgopa</p>
     </header>
 
     <div class="container">
-        <section id="project-overview">
-            <h2>Project Overview</h2>
-            <p>This proposal outlines the design and deployment of a new, secure digital ecosystem for Dr Gwen Ramokgopa. The project will establish a professional online presence with two scalable **WordPress websites** and a cohesive **visual identity**.</p>
-            <ul>
-                <li>**Dr Gwen & Associates:** A corporate site at **www.drga.co.za** to showcase professional services and expertise.</li>
-                <li>**Dr Gwen Ramokgopa Foundation:** A non-profit site at **www.drgwenramokgopafoundation.org** to highlight community initiatives and impact.</li>
-            </ul>
-            <div class="cta">
-                **Estimated Total: R 20,940** (incl. design, hosting, CID, and integrations)
+        <section class="accordion-item">
+            <div class="accordion-title">Project Overview</div>
+            <div class="accordion-content">
+                <p>This proposal outlines the design and deployment of a new, secure digital ecosystem for Dr Gwen Ramokgopa. The project will establish a professional online presence with two scalable **WordPress websites** and a cohesive **visual identity**.</p>
+                <ul>
+                    <li>**Dr Gwen & Associates:** A corporate site at **www.drga.co.za** to showcase professional services and expertise.</li>
+                    <li>**Dr Gwen Ramokgopa Foundation:** A non-profit site at **www.drgwenramokgopafoundation.org** to highlight community initiatives and impact.</li>
+                </ul>
             </div>
         </section>
 
-        <section id="visual-identity">
-            <h2>Visual & Brand Identity</h2>
-            <p>We will create a consistent and professional look across all platforms to build a strong brand presence. This includes:</p>
-            <p><strong>Colour Palette:</strong> Royal Blue, Emerald Green, Soft Gold, Clean White</p>
-            <p><strong>Typography:</strong> 'Playfair Display' for bold headings, 'Open Sans' for clean, readable body text</p>
-        </section>
-
-        <section id="scope-of-work">
-            <h2>Detailed Scope of Work</h2>
-            <p>Our comprehensive package includes the following deliverables for both websites:</p>
-            <ul>
-                <li>**Custom WordPress Theme:** A modern, mobile-responsive design built for speed and security.</li>
-                <li>**Essential Pages:** Up to 5 key pages per site (e.g., Home, About, Services/Projects, Blog, Contact).</li>
-                <li>**Professional Hosting:** One year of secure, managed WordPress hosting to ensure reliability.</li>
-                <li>**Analytics Integration:** Setup of Google Analytics to track site performance and visitor behaviour.</li>
-                <li>**Contact & Forms:** Implementation of a secure contact form to capture leads and inquiries.</li>
-                <li>**Basic Search Engine Optimization (SEO):** On-page optimization for key pages to improve visibility.</li>
-            </ul>
-        </section>
-
-        <section id="project-timeline">
-            <h2>Project Timeline & Process</h2>
-            <p>We'll follow a clear, three-phase process to ensure a rapid and timely launch. The total project duration is approximately **3-4 weeks**.</p>
-            <div class="timeline-item">
-                <h3>Phase 1: Planning & Design (1 week)</h3>
-                <p>Initial consultation, content planning, and visual design mockups.</p>
+        <section class="accordion-item">
+            <div class="accordion-title">Our Investment & Pricing Breakdown</div>
+            <div class="accordion-content">
+                <p>A transparent breakdown of the investment required to create your comprehensive digital ecosystem.</p>
+                <div class="price-list">
+                    <p><span>Website Design & Development (Both Sites)</span><span>R 15,000</span></p>
+                    <p><span>Creative & Corporate Identity (CID) Pack</span><span>R 2,500</span></p>
+                    <p><span>Professional Hosting & Setup (1 Year)</span><span>R 1,500</span></p>
+                    <p><span>Analytics & SEO Integration</span><span>R 1,000</span></p>
+                    <p><span>Client Training & Support</span><span>R 940</span></p>
+                    <p class="total-price"><span>Total Estimated Investment</span><span>R 20,940</span></p>
+                </div>
             </div>
-            <div class="timeline-item">
-                <h3>Phase 2: Development & Integration (2-3 weeks)</h3>
-                <p>Website build, content population, and feature integration.</p>
-            </div>
-            <div class="timeline-item">
-                <h3>Phase 3: Final Review & Launch (2-3 days)</h3>
-                <p>Client feedback, final tweaks, and public launch.</p>
-            </div>
-            <p><em>*This accelerated timeline requires timely feedback and delivery of content from the client to meet the launch date.</em></p>
         </section>
 
-        <section id="sign-off">
-            <h2>Client Sign-off & Next Steps</h2>
-            <p>To proceed with this project, please approve the proposal. We can begin as soon as we receive your sign-off and discuss your preferred start date.</p>
-            <a class="button" href="mailto:mkhulosoal@gmail.com?subject=Proposal Approval for Dr Gwen Ramokgopa&body=I approve the DigiSoal proposal for the website project. My preferred start date is [Enter Date].">Approve & Start Project</a>
-            <a class="button" href="https://wa.me/27661607344?text=Hi%20Mbuso,%20I%20have%20reviewed%20the%20proposal%20and%20would%20like%20to%20discuss%20it%20further.">Discuss on WhatsApp</a>
+        <section class="accordion-item">
+            <div class="accordion-title">Project Timeline & Process</div>
+            <div class="accordion-content">
+                <p>We'll follow a clear, three-phase process to ensure a rapid and timely launch. The total project duration is approximately **3-4 weeks**.</p>
+                <ul>
+                    <li>**Phase 1: Planning & Design (1 week)** - Initial consultation, content planning, and visual design mockups.</li>
+                    <li>**Phase 2: Development & Integration (2-3 weeks)** - Website build, content population, and feature integration.</li>
+                    <li>**Phase 3: Final Review & Launch (2-3 days)** - Client feedback, final tweaks, and public launch.</li>
+                </ul>
+                <p><em>*This accelerated timeline requires timely feedback and delivery of content from the client.</em></p>
+            </div>
         </section>
 
-        <section class="contact-box">
-            <h2>Contact DigiSoal</h2>
-            <p>Have questions? Let's connect.</p>
-            <p><strong>Mbuso Kumalo</strong></p>
-            <p>Email: <a href="mailto:mkhulosoal@gmail.com" style="color:white; text-decoration: underline;">mkhulosoal@gmail.com</a></p>
-            <p>Phone: <a href="tel:+27661607344" style="color:white; text-decoration: underline;">+27 66 160 7344</a></p>
+        <section class="accordion-item">
+            <div class="accordion-title">Payment & SLA Terms</div>
+            <div class="accordion-content">
+                <h3>Payment Terms</h3>
+                <ul>
+                    <li>**50% Deposit:** R 10,470 is due upon signing this proposal to begin the project.</li>
+                    <li>**50% Final Payment:** R 10,470 is due upon project completion and before the final website launch.</li>
+                </ul>
+                <h3>Service Level Agreement (SLA)</h3>
+                <p>This proposal includes a standard SLA covering:</p>
+                <ul>
+                    <li>30 days of post-launch technical support to address any bugs or issues.</li>
+                    <li>Guaranteed 99.9% uptime for hosting services.</li>
+                    <li>Monthly security updates and backups for the first year.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="smart-contract">
+            <h2>Acceptance & Smart Contract</h2>
+            <p>By filling out the form below, you are formally accepting the terms of this proposal and booking your project with DigiSoal. A copy of this signed agreement will be emailed to you for your records.</p>
+            <form action="#" method="post"> <label for="client-name">Your Full Name:</label>
+                <input type="text" id="client-name" name="client_name" required>
+                
+                <label for="comments">Comments / Feedback:</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+                
+                <label for="signature">Digital Signature:</label>
+                <input type="text" id="signature" name="signature" placeholder="Type your name to sign" required>
+                
+                <label for="accept">
+                    <input type="checkbox" id="accept" name="accept" required>
+                    I have read and agree to the terms and conditions outlined in this proposal.
+                </label>
+                
+                <button type="submit" class="submit-button">Accept & Sign Proposal</button>
+            </form>
         </section>
     </div>
 
     <footer>
         &copy; 2025 DigiSoal. All rights reserved.
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            accordionItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

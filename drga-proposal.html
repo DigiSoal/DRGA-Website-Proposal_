@@ -115,6 +115,7 @@
             border-radius: 5px;
             border: 1px solid #ddd;
             font-family: 'Open Sans', sans-serif;
+            color: #1B365D;
         }
         .signature-pad {
             border: 2px solid #2E8B57;
@@ -131,10 +132,11 @@
             border-radius: 6px;
             margin: 10px 5px;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
         .button:hover {
             background-color: #257049;
+            transform: translateY(-2px);
         }
         .submit-button {
             background-color: #C5B358;
@@ -168,10 +170,10 @@
         <section class="accordion-item">
             <div class="accordion-title">Project Overview</div>
             <div class="accordion-content">
-                <p>This proposal outlines the design and deployment of a new, secure digital ecosystem for Dr Gwen Ramokgopa. The project will establish a professional online presence with two scalable **WordPress websites** and a cohesive **visual identity**.</p>
+                <p>This proposal outlines the design and deployment of a new, secure digital ecosystem for Dr Gwen Ramokgopa. The project will establish a professional online presence with two scalable <strong>WordPress websites</strong> and a cohesive <strong>visual identity</strong>.</p>
                 <ul>
-                    <li>**Dr Gwen & Associates:** A corporate site at **www.drga.co.za** to showcase professional services and expertise.</li>
-                    <li>**Dr Gwen Ramokgopa Foundation:** A non-profit site at **www.drgwenramokgopafoundation.org** to highlight community initiatives and impact.</li>
+                    <li><strong>Dr Gwen & Associates:</strong> A corporate site at <strong>www.drga.co.za</strong> to showcase professional services and expertise.</li>
+                    <li><strong>Dr Gwen Ramokgopa Foundation:</strong> A non-profit site at <strong>www.drgwenramokgopafoundation.org</strong> to highlight community initiatives and impact.</li>
                 </ul>
             </div>
         </section>
@@ -179,14 +181,22 @@
         <section class="accordion-item">
             <div class="accordion-title">Our Investment & Pricing Breakdown</div>
             <div class="accordion-content">
-                <p>A transparent breakdown of the investment required to create your comprehensive digital ecosystem.</p>
+                <p>A transparent breakdown of the investment required to create your comprehensive digital ecosystem. This includes a one-time project fee and a flexible monthly subscription for ongoing maintenance and support.</p>
+                
+                <h3>One-Time Project Fee</h3>
                 <div class="price-list">
                     <p><span>Website Design & Development (Both Sites)</span><span>R 15,000</span></p>
                     <p><span>Creative & Corporate Identity (CID) Pack</span><span>R 2,500</span></p>
-                    <p><span>Professional Hosting & Setup (1 Year)</span><span>R 1,500</span></p>
                     <p><span>Analytics & SEO Integration</span><span>R 1,000</span></p>
-                    <p><span>Client Training & Support</span><span>R 940</span></p>
-                    <p class="total-price"><span>Total Estimated Investment</span><span>R 20,940</span></p>
+                    <p class="total-price"><span>Total One-Time Fee</span><span>R 18,500</span></p>
+                </div>
+
+                <h3>Monthly Subscription (Maintenance & Support)</h3>
+                <div class="price-list">
+                    <p><span>Professional Hosting & Uptime Monitoring</span><span>R 550/month</span></p>
+                    <p><span>Managed Security & Monthly Backups</span><span>R 350/month</span></p>
+                    <p><span>Content Updates & Minor Changes (1 hour/month)</span><span>R 400/month</span></p>
+                    <p class="total-price"><span>Total Monthly Subscription</span><span>R 1,300/month</span></p>
                 </div>
             </div>
         </section>
@@ -194,11 +204,11 @@
         <section class="accordion-item">
             <div class="accordion-title">Project Timeline & Process</div>
             <div class="accordion-content">
-                <p>We'll follow a clear, three-phase process to ensure a rapid and timely launch. The total project duration is approximately **3-4 weeks**.</p>
+                <p>We'll follow a clear, three-phase process to ensure a rapid and timely launch. The total project duration is approximately <strong>3-4 weeks</strong>.</p>
                 <ul>
-                    <li>**Phase 1: Planning & Design (1 week)** - Initial consultation, content planning, and visual design mockups.</li>
-                    <li>**Phase 2: Development & Integration (2-3 weeks)** - Website build, content population, and feature integration.</li>
-                    <li>**Phase 3: Final Review & Launch (2-3 days)** - Client feedback, final tweaks, and public launch.</li>
+                    <li><strong>Phase 1: Planning & Design (1 week)</strong> - Initial consultation, content planning, and visual design mockups.</li>
+                    <li><strong>Phase 2: Development & Integration (2-3 weeks)</strong> - Website build, content population, and feature integration.</li>
+                    <li><strong>Phase 3: Final Review & Launch (2-3 days)</strong> - Client feedback, final tweaks, and public launch.</li>
                 </ul>
                 <p><em>*This accelerated timeline requires timely feedback and delivery of content from the client.</em></p>
             </div>
@@ -209,15 +219,16 @@
             <div class="accordion-content">
                 <h3>Payment Terms</h3>
                 <ul>
-                    <li>**50% Deposit:** R 10,470 is due upon signing this proposal to begin the project.</li>
-                    <li>**50% Final Payment:** R 10,470 is due upon project completion and before the final website launch.</li>
+                    <li><strong>50% Deposit:</strong> R 9,250 is due upon signing this proposal to begin the project.</li>
+                    <li><strong>50% Final Payment:</strong> R 9,250 is due upon project completion and before the final website launch.</li>
+                    <li><strong>Monthly Subscription:</strong> The first monthly payment of R 1,300 is due on the date of launch and on the same day each month thereafter.</li>
                 </ul>
                 <h3>Service Level Agreement (SLA)</h3>
                 <p>This proposal includes a standard SLA covering:</p>
                 <ul>
-                    <li>30 days of post-launch technical support to address any bugs or issues.</li>
                     <li>Guaranteed 99.9% uptime for hosting services.</li>
-                    <li>Monthly security updates and backups for the first year.</li>
+                    <li>Monthly security updates and backups.</li>
+                    <li>A dedicated support contact for technical issues.</li>
                 </ul>
             </div>
         </section>
@@ -225,17 +236,21 @@
         <section id="smart-contract">
             <h2>Acceptance & Smart Contract</h2>
             <p>By filling out the form below, you are formally accepting the terms of this proposal and booking your project with DigiSoal. A copy of this signed agreement will be emailed to you for your records.</p>
-            <form action="#" method="post"> <label for="client-name">Your Full Name:</label>
-                <input type="text" id="client-name" name="client_name" required>
+            <form action="https://formspree.io/f/your@email.com" method="POST">
+                <label for="client-name">Your Full Name:</label>
+                <input type="text" id="client-name" name="Client Name" required>
+                
+                <label for="client-email">Your Email Address:</label>
+                <input type="email" id="client-email" name="Client Email" required>
                 
                 <label for="comments">Comments / Feedback:</label>
-                <textarea id="comments" name="comments" rows="4"></textarea>
+                <textarea id="comments" name="Comments" rows="4"></textarea>
                 
                 <label for="signature">Digital Signature:</label>
-                <input type="text" id="signature" name="signature" placeholder="Type your name to sign" required>
+                <input type="text" id="signature" name="Signature" placeholder="Type your name to sign" required>
                 
                 <label for="accept">
-                    <input type="checkbox" id="accept" name="accept" required>
+                    <input type="checkbox" id="accept" name="Agreement" value="Accepted" required>
                     I have read and agree to the terms and conditions outlined in this proposal.
                 </label>
                 
@@ -252,8 +267,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             const accordionItems = document.querySelectorAll('.accordion-item');
             accordionItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    this.classList.toggle('active');
+                const title = item.querySelector('.accordion-title');
+                title.addEventListener('click', function() {
+                    item.classList.toggle('active');
                 });
             });
         });

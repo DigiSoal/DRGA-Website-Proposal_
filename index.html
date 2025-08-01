@@ -99,7 +99,7 @@
             width: 100%;
             height: 100%;
             padding: 20px;
-            background-color: rgba(46, 139, 87, 0.9); /* primary-color with transparency */
+            background-color: rgba(46, 139, 87, 0.9);
             opacity: 0;
             transition: opacity 0.5s ease;
             display: flex;
@@ -140,6 +140,33 @@
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
+        .contact-section {
+            margin-top: 60px;
+            padding: 40px;
+            background-color: var(--tertiary-color);
+            color: white;
+            border-radius: 10px;
+        }
+        .contact-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .contact-link {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border: 2px solid #FFFFFF;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .contact-link:hover {
+            background-color: #FFFFFF;
+            color: var(--tertiary-color);
+        }
         footer {
             margin-top: 50px;
             font-size: 0.9rem;
@@ -176,10 +203,21 @@
         </section>
 
         <a class="cta-button" href="https://digisoal.github.io/DRGA-Website-Proposal_/drga-proposal.html" target="_blank">View Our Official Proposal</a>
-
-        <footer>
-            &copy; 2025 DigiSoal | Powered by MKHULO SOAL HOLDINGS PTY LTD
-        </footer>
     </div>
+
+    <section class="contact-section">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p>Ready to build your digital future? Get in touch with us today.</p>
+            <a href="mailto:mkhulosoal@gmail.com" class="contact-link">Email Us</a>
+            <a href="https://wa.me/27661607344?text=Hi%20Mbuso,%20I%20saw%20your%20website%20and%20I'd%20like%20to%20discuss%20a%20project." class="contact-link" target="_blank">Message on WhatsApp</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            &copy; 2025 DigiSoal | Powered by MKHULO SOAL HOLDINGS PTY LTD
+        </div>
+    </footer>
 </body>
 </html>

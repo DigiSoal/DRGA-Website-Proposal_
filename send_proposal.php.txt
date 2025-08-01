@@ -1,0 +1,63 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Collect and sanitize form data
+    $clientName = htmlspecialchars($_POST['Client_Name']);
+    $clientEmail = htmlspecialchars($_POST['Client_Email']);
+    $startDate = htmlspecialchars($_POST['Start_Date']);
+    $comments = htmlspecialchars($_POST['Comments']);
+    $signature = htmlspecialchars($_POST['Signature']);
+    $agreement = htmlspecialchars($_POST['Agreement']);
+    $contactMethod = htmlspecialchars($_POST['Contact_Method']);
+
+    // Your email address
+    $yourEmail = "mkhulosoal@gmail.com";
+    $subject = "New Proposal Acceptance from " . $clientName;
+    
+    // Email content for you
+    $to = $yourEmail;
+    $headers = "From: " . $clientEmail . "\r\n";
+    $headers .= "Reply-To: " . $clientEmail . "\r\n";
+    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+    $message = "<html><body>";
+    $message .= "<h2>New Proposal Acceptance Received!</h2>";
+    $message .= "<p><strong>Client Name:</strong> " . $clientName . "</p>";
+    $message .= "<p><strong>Client Email:</strong> " . $clientEmail . "</p>";
+    $message .= "<p><strong>Preferred Start Date:</strong> " . $startDate . "</p>";
+    $message .= "<p><strong>Comments:</strong><br>" . nl2br($comments) . "</p>";
+    $message .= "<p><strong>Digital Signature:</strong> " . $signature . "</p>";
+    $message .= "<p><strong>Agreement:</strong> " . $agreement . "</p>";
+    $message .= "<p><strong>Preferred Contact Method:</strong> " . $contactMethod . "</p>";
+    $message .= "</body></html>";
+    
+    // Send the email to you
+    mail($to, $subject, $message, $headers);
+
+    // Send a confirmation email to the client
+    $clientSubject = "DigiSoal Proposal Acceptance Confirmation";
+    $clientMessage = "<html><body>";
+    $clientMessage .= "<h2>Thank you, " . $clientName . "!</h2>";
+    $clientMessage .= "<p>This is a confirmation that you have successfully accepted our proposal. We will be in touch shortly to get started on your project.</p>";
+    $clientMessage .= "<p><strong>Your Submission Details:</strong></p>";
+    $clientMessage .= "<p><strong>Preferred Start Date:</strong> " . $startDate . "</p>";
+    $clientMessage .= "<p><strong>Comments:</strong><br>" . nl2br($comments) . "</p>";
+    $clientMessage .= "<p><strong>Signed by:</strong> " . $signature . "</p>";
+    $clientMessage .= "<p>Best regards,<br>The DigiSoal Team</p>";
+    $clientMessage .= "</body></html>";
+    
+    $clientHeaders = "From: " . $yourEmail . "\r\n";
+    $clientHeaders .= "Reply-To: " . $yourEmail . "\r\n";
+    $clientHeaders .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+    mail($clientEmail, $clientSubject, $clientMessage, $clientHeaders);
+    
+    // Redirect to a thank you page
+    header("Location: thank-you.html");
+    exit;
+
+} else {
+    // Not a POST request, redirect to the form page
+    header("Location: index.html");
+    exit;
+}
+?>

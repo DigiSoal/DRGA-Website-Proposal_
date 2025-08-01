@@ -236,7 +236,8 @@
         <section id="smart-contract">
             <h2>Acceptance & Smart Contract</h2>
             <p>By filling out the form below, you are formally accepting the terms of this proposal and booking your project with DigiSoal. A copy of this signed agreement will be emailed to you for your records.</p>
-            <form action="https://formspree.io/f/your@email.com" method="POST">
+            <form id="proposal-form" action="https://formspree.io/f/xrbllwzz" method="POST">
+                <input type="hidden" name="_cc" value="mkhulosoal@gmail.com">
                 <label for="client-name">Your Full Name:</label>
                 <input type="text" id="client-name" name="Client Name" required>
                 
@@ -265,12 +266,32 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Accordion functionality
             const accordionItems = document.querySelectorAll('.accordion-item');
             accordionItems.forEach(item => {
                 const title = item.querySelector('.accordion-title');
                 title.addEventListener('click', function() {
                     item.classList.toggle('active');
                 });
+            });
+
+            // Form submission and WhatsApp link generation
+            const form = document.getElementById('proposal-form');
+            form.addEventListener('submit', function(e) {
+                // Get form data
+                const clientName = document.getElementById('client-name').value;
+                const clientEmail = document.getElementById('client-email').value;
+                const comments = document.getElementById('comments').value;
+                
+                // DigiSoal's WhatsApp number
+                const digiSoalNumber = '27661607344';
+                
+                // Message for DigiSoal
+                const digiSoalMessage = `Hello Mbuso, I have just accepted the proposal. My details are:\nName: ${clientName}\nEmail: ${clientEmail}\nComments: ${comments || 'No comments provided.'}`;
+                
+                // Open WhatsApp to send a message to DigiSoal
+                const whatsappURL = `https://wa.me/${digiSoalNumber}?text=${encodeURIComponent(digiSoalMessage)}`;
+                window.open(whatsappURL, '_blank');
             });
         });
     </script>

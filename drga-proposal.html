@@ -108,7 +108,7 @@
             margin-top: 15px;
             font-weight: bold;
         }
-        form input, form textarea {
+        form input, form textarea, form select {
             width: 100%;
             padding: 10px;
             margin-top: 5px;
@@ -214,50 +214,58 @@
             </div>
         </section>
 
-       <section class="accordion-item">
-    <div class="accordion-title">Payment & SLA Terms</div>
-    <div class="accordion-content">
-        <h3>Payment Terms</h3>
-        <p>Payments will be split into a one-time project fee and a recurring monthly subscription.</p>
-        <ul>
-            <li><strong>50% Deposit:</strong> R 9,250 is due upon signing this proposal to begin the project.</li>
-            <li><strong>50% Final Payment:</strong> R 9,250 is due upon project completion and before the final website launch.</li>
-            <li><strong>Monthly Subscription:</strong> The first monthly payment of R 1,300 is due on the date of launch and on the same day each month thereafter.</li>
-        </ul>
-
-        <h3>Accepted Payment Methods</h3>
-        <ul>
-            <li><strong>EFT/Bank Transfer:</strong> Bank details will be provided on your invoice.</li>
-            <li><strong>Recurring Billing:</strong> For your convenience, monthly subscription fees can be automated via a recurring debit order.</li>
-        </ul>
-        <p><strong>Cancellation Policy:</strong> You may cancel your recurring subscription at any time by providing 30 days' written notice.</p>
-
-        <h3>Service Level Agreement (SLA)</h3>
-        <p>This proposal includes a standard SLA covering:</p>
-        <ul>
-            <li>Guaranteed 99.9% uptime for hosting services.</li>
-            <li>Monthly security updates and backups.</li>
-            <li>A dedicated support contact for technical issues.</li>
-        </ul>
-    </div>
-</section>
+        <section class="accordion-item">
+            <div class="accordion-title">Payment & SLA Terms</div>
+            <div class="accordion-content">
+                <h3>Payment Terms</h3>
+                <p>Payments will be split into a one-time project fee and a recurring monthly subscription.</p>
+                <ul>
+                    <li><strong>50% Deposit:</strong> R 9,250 is due on or before the project's stipulated start date.</li>
+                    <li><strong>50% Final Payment:</strong> R 9,250 is due upon project completion and before the final website launch.</li>
+                    <li><strong>Monthly Subscription:</strong> The first monthly payment of R 1,300 is due on the date of launch and on the same day each month thereafter.</li>
+                </ul>
+                
+                <h3>Accepted Payment Methods</h3>
+                <ul>
+                    <li><strong>EFT/Bank Transfer:</strong> Bank details will be provided on your invoice.</li>
+                    <li><strong>Recurring Billing:</strong> For your convenience, monthly subscription fees can be automated via a recurring debit order.</li>
+                </ul>
+                <p><strong>Cancellation Policy:</strong> You may cancel your recurring subscription at any time by providing 30 days' written notice.</p>
+                
+                <h3>Service Level Agreement (SLA)</h3>
+                <p>This proposal includes a standard SLA covering:</p>
+                <ul>
+                    <li>Guaranteed 99.9% uptime for hosting services.</li>
+                    <li>Monthly security updates and backups.</li>
+                    <li>A dedicated support contact for technical issues.</li>
+                </ul>
+            </div>
+        </section>
         
         <section id="smart-contract">
             <h2>Acceptance & Smart Contract</h2>
             <p>By filling out the form below, you are formally accepting the terms of this proposal and booking your project with DigiSoal. A copy of this signed agreement will be emailed to you for your records.</p>
-            <form id="proposal-form" action="https://formspree.io/f/xrbllwzz" method="POST">
-                <input type="hidden" name="_cc" value="mkhulosoal@gmail.com">
+            <form id="proposal-form" action="send_proposal.php" method="POST">
                 <label for="client-name">Your Full Name:</label>
-                <input type="text" id="client-name" name="Client Name" required>
+                <input type="text" id="client-name" name="Client_Name" required>
                 
                 <label for="client-email">Your Email Address:</label>
-                <input type="email" id="client-email" name="Client Email" required>
+                <input type="email" id="client-email" name="Client_Email" required>
+                
+                <label for="start-date">Preferred Project Start Date:</label>
+                <input type="date" id="start-date" name="Start_Date" required>
                 
                 <label for="comments">Comments / Feedback:</label>
                 <textarea id="comments" name="Comments" rows="4"></textarea>
                 
                 <label for="signature">Digital Signature:</label>
                 <input type="text" id="signature" name="Signature" placeholder="Type your name to sign" required>
+                
+                <label for="contact-method">How should we contact you?</label>
+                <select id="contact-method" name="Contact_Method" required>
+                    <option value="email">Email</option>
+                    <option value="whatsapp">WhatsApp (+27 66 160 7344)</option>
+                </select>
                 
                 <label for="accept">
                     <input type="checkbox" id="accept" name="Agreement" value="Accepted" required>
@@ -275,32 +283,12 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Accordion functionality
             const accordionItems = document.querySelectorAll('.accordion-item');
             accordionItems.forEach(item => {
                 const title = item.querySelector('.accordion-title');
                 title.addEventListener('click', function() {
                     item.classList.toggle('active');
                 });
-            });
-
-            // Form submission and WhatsApp link generation
-            const form = document.getElementById('proposal-form');
-            form.addEventListener('submit', function(e) {
-                // Get form data
-                const clientName = document.getElementById('client-name').value;
-                const clientEmail = document.getElementById('client-email').value;
-                const comments = document.getElementById('comments').value;
-                
-                // DigiSoal's WhatsApp number
-                const digiSoalNumber = '27661607344';
-                
-                // Message for DigiSoal
-                const digiSoalMessage = `Hello Mbuso, I have just accepted the proposal. My details are:\nName: ${clientName}\nEmail: ${clientEmail}\nComments: ${comments || 'No comments provided.'}`;
-                
-                // Open WhatsApp to send a message to DigiSoal
-                const whatsappURL = `https://wa.me/${digiSoalNumber}?text=${encodeURIComponent(digiSoalMessage)}`;
-                window.open(whatsappURL, '_blank');
             });
         });
     </script>
